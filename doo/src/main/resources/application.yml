@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    name: mydb
+    url: jdbc:mysql://rm-uf667iw78i0r6m8i0o.mysql.rds.aliyuncs.com:3306/wb_dragon_dev
+    username: dragon_wu_dev
+    password: dragon_wu_dev_db40e5
+    driverClassName: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    minIdle: 1
+    maxActive: 2
+    initialSize: 1
+    timeBetweenEvictionRunsMillis: 3000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 'ZTM' FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+#mybatis
+mybatis:
+  type-aliases-package: com.wdl.doo.domain.model
+  configuration:
+      map-underscore-to-camel-case: true
+      default-fetch-size: 100
+      default-statement-timeout: 30
+pagehelper:
+  default-count: true
+  dialect-alias:
+    mysql: com.github.pagehelper.dialect.helper.MySqlDialect
